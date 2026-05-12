@@ -1,0 +1,546 @@
+<!DOCTYPE html>
+<html lang="ru">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0, viewport-fit=cover">
+  <title>Просвещение на Руси · XIV–XVI века | Учебный портал</title>
+  <meta name="description" content="Учебные материалы для студентов: развитие грамотности, книжное дело, просветители и начало книгопечатания на Руси. Викторина для самопроверки.">
+  <!-- Google Fonts & Font Awesome -->
+  <link href="https://fonts.googleapis.com/css2?family=Inter:opsz,wght@14..32,300;14..32,400;14..32,500;14..32,600;14..32,700&family=Merriweather:ital,wght@0,400;0,700;1,400&display=swap" rel="stylesheet">
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0-beta3/css/all.min.css">
+  <style>
+    * {
+      margin: 0;
+      padding: 0;
+      box-sizing: border-box;
+    }
+
+    body {
+      background: #f9f6ef;
+      font-family: 'Inter', sans-serif;
+      color: #2c241a;
+      line-height: 1.5;
+    }
+
+    /* контейнер */
+    .container {
+      max-width: 1200px;
+      margin: 0 auto;
+      padding: 2rem 1.5rem;
+    }
+
+    /* типографика */
+    h1, h2, h3 {
+      font-family: 'Merriweather', serif;
+      font-weight: 700;
+      letter-spacing: -0.01em;
+    }
+
+    h1 {
+      font-size: 2.6rem;
+      background: linear-gradient(135deg, #3b2a1f, #7a5a3a);
+      background-clip: text;
+      -webkit-background-clip: text;
+      color: transparent;
+      margin-bottom: 0.5rem;
+    }
+
+    .subhead {
+      font-size: 1.2rem;
+      color: #5e4b34;
+      border-left: 4px solid #b8860b;
+      padding-left: 1rem;
+      margin-bottom: 2rem;
+      font-weight: 400;
+    }
+
+    h2 {
+      font-size: 1.8rem;
+      margin: 1.8rem 0 0.8rem 0;
+      padding-bottom: 0.5rem;
+      border-bottom: 3px solid #e2cfb3;
+      display: inline-block;
+    }
+
+    h3 {
+      font-size: 1.3rem;
+      margin: 1.2rem 0 0.5rem 0;
+      color: #4a3520;
+    }
+
+    p {
+      margin-bottom: 1rem;
+      font-weight: 400;
+    }
+
+    /* карточки и секции */
+    .card-grid {
+      display: flex;
+      flex-wrap: wrap;
+      gap: 1.8rem;
+      margin: 2rem 0;
+    }
+
+    .info-card {
+      background: white;
+      border-radius: 28px;
+      padding: 1.5rem;
+      flex: 1 1 280px;
+      box-shadow: 0 10px 20px rgba(0,0,0,0.05);
+      transition: all 0.2s ease;
+      border: 1px solid #f0e2d0;
+    }
+
+    .info-card i {
+      font-size: 2.2rem;
+      color: #b46f3a;
+      margin-bottom: 1rem;
+    }
+
+    .info-card h3 {
+      margin-top: 0;
+    }
+
+    .info-card:hover {
+      transform: translateY(-5px);
+      box-shadow: 0 20px 25px -12px rgba(0,0,0,0.1);
+    }
+
+    .highlight {
+      background: #fff6ea;
+      border-left: 6px solid #b68b40;
+      padding: 1rem 1.5rem;
+      border-radius: 20px;
+      margin: 1.5rem 0;
+    }
+
+    ul, .styled-list {
+      margin: 0.8rem 0 1rem 1.8rem;
+    }
+
+    li {
+      margin: 0.5rem 0;
+    }
+
+    /* викторина */
+    .quiz-section {
+      background: #ffffffea;
+      border-radius: 40px;
+      margin-top: 3rem;
+      padding: 2rem;
+      box-shadow: 0 12px 28px rgba(0,0,0,0.08);
+      border: 1px solid #e9dbc9;
+    }
+
+    .quiz-title {
+      font-size: 2rem;
+      margin-bottom: 0.5rem;
+      display: flex;
+      align-items: center;
+      gap: 0.7rem;
+    }
+
+    .quiz-title i {
+      font-size: 2rem;
+      color: #d99945;
+    }
+
+    .question-item {
+      background: #fefaf5;
+      border-radius: 28px;
+      padding: 1.3rem 1.8rem;
+      margin-bottom: 1.8rem;
+      transition: background 0.2s;
+      border: 1px solid #eedfcb;
+    }
+
+    .question-text {
+      font-weight: 700;
+      font-size: 1.2rem;
+      margin-bottom: 1rem;
+      font-family: 'Merriweather', serif;
+    }
+
+    .options {
+      display: flex;
+      flex-wrap: wrap;
+      gap: 1.5rem;
+      margin: 0.5rem 0 0.2rem;
+    }
+
+    .option {
+      display: flex;
+      align-items: center;
+      gap: 0.5rem;
+      cursor: pointer;
+      background: #f1e7dc;
+      padding: 0.5rem 1rem;
+      border-radius: 60px;
+      transition: 0.1s;
+    }
+
+    .option input {
+      accent-color: #b46f3a;
+      width: 18px;
+      height: 18px;
+      margin: 0;
+      cursor: pointer;
+    }
+
+    .option label {
+      font-weight: 500;
+      cursor: pointer;
+    }
+
+    .quiz-btn {
+      background: #7a5a3a;
+      border: none;
+      padding: 0.8rem 2rem;
+      font-size: 1.1rem;
+      font-weight: 600;
+      color: white;
+      border-radius: 60px;
+      cursor: pointer;
+      transition: all 0.2s;
+      margin: 1rem 0;
+      display: inline-flex;
+      align-items: center;
+      gap: 0.7rem;
+    }
+
+    .quiz-btn:hover {
+      background: #5b3e24;
+      transform: scale(1.02);
+    }
+
+    .result-area {
+      font-size: 1.2rem;
+      font-weight: 600;
+      background: #e9dacb;
+      padding: 0.8rem 1.2rem;
+      border-radius: 40px;
+      margin-top: 1.2rem;
+      display: inline-block;
+    }
+
+    .feedback-badge {
+      margin-top: 1rem;
+    }
+
+    /* подсветка вопросов после проверки */
+    .question-item.correct-highlight {
+      background: #e6f3e6;
+      border-left: 8px solid #2e7d32;
+    }
+
+    .question-item.wrong-highlight {
+      background: #ffe6e5;
+      border-left: 8px solid #c62828;
+    }
+
+    footer {
+      text-align: center;
+      margin-top: 3rem;
+      padding: 1.5rem;
+      font-size: 0.85rem;
+      color: #6f5a42;
+      border-top: 1px solid #e1cfb9;
+    }
+
+    @media (max-width: 720px) {
+      .container {
+        padding: 1rem;
+      }
+      h1 {
+        font-size: 2rem;
+      }
+      .options {
+        flex-direction: column;
+        gap: 0.8rem;
+      }
+      .option {
+        width: fit-content;
+      }
+      .quiz-section {
+        padding: 1.2rem;
+      }
+    }
+
+    a {
+      text-decoration: none;
+      color: #b46f3a;
+    }
+
+    .badge-date {
+      font-size: 0.9rem;
+      background: #e9dfd3;
+      display: inline-block;
+      padding: 0.2rem 0.8rem;
+      border-radius: 30px;
+    }
+  </style>
+</head>
+<body>
+<div class="container">
+  <header>
+    <h1>📖 Просвещение на Руси<br>XIV–XVI века</h1>
+    <div class="subhead">От рукописной книги до первого «Апостола»: как зарождалось образование и книжность в Московском государстве</div>
+    <div class="badge-date">Для студентов и всех, кто интересуется историей русской культуры</div>
+  </header>
+
+  <main>
+    <!-- Введение -->
+    <section>
+      <h2><i class="fas fa-candle"></i> Исторический контекст</h2>
+      <p>После монгольского нашествия культурная жизнь на Руси переживала упадок, но уже с середины XIV века начинается постепенное возрождение. Объединение земель вокруг Москвы, поддержка церкви и рост грамотности среди духовенства и горожан стали двигателями просвещения. В этот период складываются предпосылки для создания единого культурного пространства, развиваются летописание, агиография и книгописание.</p>
+      <div class="highlight">
+        <i class="fas fa-feather-alt"></i> <strong>Ключевая тенденция:</strong> усиление роли монастырей как центров книжности, появление первых профессиональных переписчиков и, к концу XVI века, — начало книгопечатания.
+      </div>
+    </section>
+
+    <!-- Грамотность и школы -->
+    <section>
+      <h2><i class="fas fa-school"></i> Школы и грамотность</h2>
+      <p>Обучение велось преимущественно при церквях и монастырях. «Мастера грамоты» — частные учителя — обучали детей чтению, письму и счёту. Берестяные грамоты, найденные в Новгороде, доказывают, что даже простые горожане и купцы владели грамотой.</p>
+      <div class="card-grid">
+        <div class="info-card"><i class="fas fa-scroll"></i><h3>Центры обучения</h3><p>Троице-Сергиев, Кирилло-Белозерский, Соловецкий монастыри — скриптории и школы для послушников.</p></div>
+        <div class="info-card"><i class="fas fa-chalkboard"></i><h3>Способы письма</h3><p>Устав, полуустав, скоропись. Книги писались на пергамене, бересте, позже на бумаге. Иллюминация и орнамент — высокое искусство.</p></div>
+        <div class="info-card"><i class="fas fa-users"></i><h3>Обучение</h3><p>Псалтырь, Часослов, азбуковники — основные учебные пособия. Учили читать по складам, заучивали молитвы.</p></div>
+      </div>
+    </section>
+
+    <!-- Книжное дело и рукописи -->
+    <section>
+      <h2><i class="fas fa-book-open"></i> Книжное дело и рукописная традиция</h2>
+      <p>Монастырские скриптории (мастерские по переписке книг) создавали богослужебные сборники, жития святых, летописи. Крупнейшие центры: Троице-Сергиева лавра, Иосифо-Волоколамский монастырь. Переписчики работали годами над одним кодексом, украшая его заставками и миниатюрами.</p>
+      <ul class="styled-list">
+        <li><i class="fas fa-pen-fancy"></i> <strong>Заказные книги:</strong> создавались для князей, митрополитов и богатых бояр.</li>
+        <li><i class="fas fa-archive"></i> <strong>Библиотеки:</strong> при соборах и монастырях собирали сотни рукописей (например, библиотека Соловецкого монастыря).</li>
+        <li><i class="fas fa-globe"></i> <strong>«Хронографы»</strong> и переводная литература знакомили с всемирной историей.</li>
+      </ul>
+    </section>
+
+    <!-- Просветители -->
+    <section>
+      <h2><i class="fas fa-user-graduate"></i> Выдающиеся просветители XIV–XVI вв.</h2>
+      <div class="card-grid">
+        <div class="info-card"><i class="fas fa-language"></i><h3>Стефан Пермский</h3><p>Создал древнепермскую азбуку (Абур) для народа коми, переводил богослужебные тексты. Просветительская миссия на Северо-Востоке.</p></div>
+        <div class="info-card"><i class="fas fa-feather"></i><h3>Епифаний Премудрый</h3><p>Автор «Жития Сергия Радонежского» и «Жития Стефана Пермского» – шедевров агиографии, воспевающих учёность и духовный подвиг.</p></div>
+        <div class="info-card"><i class="fas fa-church"></i><h3>Сергий Радонежский</h3><p>Игумен земли Русской, основатель Троицкого монастыря, где процветала книжная премудрость и воспитание иноков.</p></div>
+        <div class="info-card"><i class="fas fa-book-bible"></i><h3>Максим Грек</h3><p>Переводчик и филолог, исправлял богослужебные книги, написал множество поучений, способствовал исправлению ошибок в рукописях.</p></div>
+        <div class="info-card"><i class="fas fa-crown"></i><h3>Митрополит Макарий</h3><p>Создатель «Великих Четьих-Миней» — 12-томного собрания житий, поучений и канонических текстов. Покровитель книгопечатания.</p></div>
+      </div>
+    </section>
+
+    <!-- КНИГОПЕЧАТАНИЕ -->
+    <section>
+      <h2><i class="fas fa-print"></i> Начало книгопечатания: Иван Фёдоров и «Апостол»</h2>
+      <p>В середине XVI века, при поддержке Ивана Грозного и митрополита Макария, в Москве возникает Печатный двор. 1 марта 1564 года выходит первая точно датированная печатная книга <strong>«Апостол»</strong>, созданная Иваном Фёдоровым и Петром Мстиславцем. В 1565 году издаётся «Часословец» — учебная книга для грамоты.</p>
+      <div class="highlight">
+        <i class="fas fa-microphone-alt"></i> Значение книгопечатания: ускорение размножения книг, унификация текстов, снижение ошибок переписчиков, распространение просвещения в городах и сёлах.
+      </div>
+      <p>После пожара и противодействия переписчиков-староверов Иван Фёдоров переехал в Литву, затем во Львов, где продолжил печатное дело. Его наследие стало фундаментом для последующего развития образования в России.</p>
+    </section>
+
+    <!-- Литературные памятники -->
+    <section>
+      <h2><i class="fas fa-copy"></i> Литературные своды и знания</h2>
+      <ul>
+        <li><strong>«Великие Четьи-Минеи»</strong> (митр. Макарий) — энциклопедия духовной литературы, читаемая вслух по дням.</li>
+        <li><strong>«Степенная книга»</strong> — систематизация истории русских князей.</li>
+        <li><strong>«Домострой»</strong> — свод житейских правил, содержит наставления о воспитании, ведении хозяйства и чтении.</li>
+        <li><strong>Летописные своды</strong> (Никоновская, Воскресенская летописи) — крупнейшие исторические компиляции, сохранившие факты о культурной жизни.</li>
+      </ul>
+      <p>Распространялись «азбуковники» и рукописные словари, способствовавшие систематизации знаний. В XVI веке появляются первые пособия по грамматике и арифметике.</p>
+    </section>
+
+    <!-- Итоги просвещения -->
+    <section>
+      <h2><i class="fas fa-chart-line"></i> Итоги: культурный подъём</h2>
+      <p>К концу XVI века грамотность охватывала не только духовенство, но и часть посадского населения, служилых людей. Возникла общественная потребность в печатной книге. Закрепились традиции высокого книгописного искусства, были созданы крупные библиотеки. Просвещение становится одной из основ формирования национального самосознания и укрепления единого Русского государства.</p>
+    </section>
+
+    <!-- ВИКТОРИНА -->
+    <div class="quiz-section" id="quizBlock">
+      <div class="quiz-title">
+        <i class="fas fa-question-circle"></i> 
+        <span>Проверьте себя: викторина по теме</span>
+      </div>
+      <p style="margin-bottom: 1.5rem;">Ответьте на 8 вопросов, чтобы закрепить материал. После проверки вы увидите свой результат и подсветку ответов.</p>
+
+      <form id="quizForm">
+        <!-- Вопрос 1 -->
+        <div class="question-item" data-correct="Скрипторий">
+          <div class="question-text">1. Как назывались мастерские по переписке книг при монастырях?</div>
+          <div class="options">
+            <label class="option"><input type="radio" name="q1" value="Летописная палата"> <span>Летописная палата</span></label>
+            <label class="option"><input type="radio" name="q1" value="Скрипторий"> <span>Скрипторий</span></label>
+            <label class="option"><input type="radio" name="q1" value="Иконописная мастерская"> <span>Иконописная мастерская</span></label>
+          </div>
+        </div>
+
+        <!-- Вопрос 2 -->
+        <div class="question-item" data-correct="Иван Федоров">
+          <div class="question-text">2. Кто считается первым русским книгопечатником, издавшим «Апостол» в 1564 году?</div>
+          <div class="options">
+            <label class="option"><input type="radio" name="q2" value="Максим Грек"> <span>Максим Грек</span></label>
+            <label class="option"><input type="radio" name="q2" value="Иван Федоров"> <span>Иван Федоров</span></label>
+            <label class="option"><input type="radio" name="q2" value="Епифаний Премудрый"> <span>Епифаний Премудрый</span></label>
+          </div>
+        </div>
+
+        <!-- Вопрос 3 -->
+        <div class="question-item" data-correct="Создание азбуки для народа коми">
+          <div class="question-text">3. В чём главная заслуга Стефана Пермского в просвещении?</div>
+          <div class="options">
+            <label class="option"><input type="radio" name="q3" value="Перевод Библии на русский язык"> <span>Перевод Библии на русский</span></label>
+            <label class="option"><input type="radio" name="q3" value="Открытие первой школы в Москве"> <span>Открытие школы в Москве</span></label>
+            <label class="option"><input type="radio" name="q3" value="Создание азбуки для народа коми"> <span>Создание азбуки для коми (древнепермской)</span></label>
+          </div>
+        </div>
+
+        <!-- Вопрос 4 -->
+        <div class="question-item" data-correct="Великие Четьи-Минеи">
+          <div class="question-text">4. Как назывался грандиозный свод житий святых, поучений и сказаний, составленный митрополитом Макарием?</div>
+          <div class="options">
+            <label class="option"><input type="radio" name="q4" value="Домострой"> <span>Домострой</span></label>
+            <label class="option"><input type="radio" name="q4" value="Великие Четьи-Минеи"> <span>Великие Четьи-Минеи</span></label>
+            <label class="option"><input type="radio" name="q4" value="Изборник Святослава"> <span>Изборник Святослава</span></label>
+          </div>
+        </div>
+
+        <!-- Вопрос 5 -->
+        <div class="question-item" data-correct="XVI век">
+          <div class="question-text">5. В каком веке в Московском царстве началось книгопечатание?</div>
+          <div class="options">
+            <label class="option"><input type="radio" name="q5" value="XV век"> <span>XV век</span></label>
+            <label class="option"><input type="radio" name="q5" value="XVI век"> <span>XVI век</span></label>
+            <label class="option"><input type="radio" name="q5" value="XVII век"> <span>XVII век</span></label>
+          </div>
+        </div>
+
+        <!-- Вопрос 6 -->
+        <div class="question-item" data-correct="Епифаний Премудрый">
+          <div class="question-text">6. Кто написал знаменитые жития «Житие Сергия Радонежского» и «Житие Стефана Пермского»?</div>
+          <div class="options">
+            <label class="option"><input type="radio" name="q6" value="Пахомий Логофет"> <span>Пахомий Логофет</span></label>
+            <label class="option"><input type="radio" name="q6" value="Епифаний Премудрый"> <span>Епифаний Премудрый</span></label>
+            <label class="option"><input type="radio" name="q6" value="Нил Сорский"> <span>Нил Сорский</span></label>
+          </div>
+        </div>
+
+        <!-- Вопрос 7 -->
+        <div class="question-item" data-correct="Троице-Сергиев">
+          <div class="question-text">7. Какой монастырь стал одним из крупнейших центров книжности в XIV–XVI веках?</div>
+          <div class="options">
+            <label class="option"><input type="radio" name="q7" value="Кирилло-Белозерский"> <span>Кирилло-Белозерский</span></label>
+            <label class="option"><input type="radio" name="q7" value="Соловецкий"> <span>Соловецкий</span></label>
+            <label class="option"><input type="radio" name="q7" value="Троице-Сергиев"> <span>Троице-Сергиев (Лавра)</span></label>
+          </div>
+        </div>
+
+        <!-- Вопрос 8 -->
+        <div class="question-item" data-correct="Апостол">
+          <div class="question-text">8. Как называлась первая точно датированная печатная книга, выпущенная Иваном Фёдоровым в Москве в 1564 году?</div>
+          <div class="options">
+            <label class="option"><input type="radio" name="q8" value="Часослов"> <span>Часослов</span></label>
+            <label class="option"><input type="radio" name="q8" value="Апостол"> <span>Апостол</span></label>
+            <label class="option"><input type="radio" name="q8" value="Псалтырь"> <span>Псалтырь</span></label>
+          </div>
+        </div>
+        
+        <div style="display: flex; justify-content: space-between; align-items: center; flex-wrap: wrap;">
+          <button type="button" class="quiz-btn" id="checkQuizBtn"><i class="fas fa-check-double"></i> Проверить ответы</button>
+          <button type="button" class="quiz-btn" id="resetQuizBtn" style="background: #8f7a64;"><i class="fas fa-undo-alt"></i> Сбросить ответы</button>
+        </div>
+      </form>
+      <div id="quizResult" class="result-area"></div>
+      <div class="feedback-badge" id="quizExtraFeedback"></div>
+    </div>
+  </main>
+  <footer>
+    <p>© Учебный ресурс по истории русской культуры. Материал составлен на основе исторических источников (летописи, жития, исследования). Цель — ознакомление студентов с эпохой становления просвещения.</p>
+  </footer>
+</div>
+
+<script>
+  (function() {
+    // правильные значения (соответствуют data-correct у каждого .question-item)
+    const quizItems = document.querySelectorAll('.question-item');
+    const checkBtn = document.getElementById('checkQuizBtn');
+    const resetBtn = document.getElementById('resetQuizBtn');
+    const resultDiv = document.getElementById('quizResult');
+    const extraFeedback = document.getElementById('quizExtraFeedback');
+
+    // функция для сброса выделения и очистки результата
+    function resetHighlightAndResult() {
+      quizItems.forEach(item => {
+        item.classList.remove('correct-highlight', 'wrong-highlight');
+      });
+      resultDiv.innerHTML = '';
+      extraFeedback.innerHTML = '';
+      // снимаем выбор со всех радио
+      const allRadios = document.querySelectorAll('#quizForm input[type="radio"]');
+      allRadios.forEach(radio => radio.checked = false);
+    }
+
+    // обработать проверку
+    function checkAnswers() {
+      // сначала сбросим стили прошлой проверки (но не сбрасываем ответы)
+      quizItems.forEach(item => {
+        item.classList.remove('correct-highlight', 'wrong-highlight');
+      });
+      
+      let correctCount = 0;
+      const total = quizItems.length;
+      const resultsPerQuestion = [];
+
+      quizItems.forEach((item, idx) => {
+        const correctAnswer = item.getAttribute('data-correct');
+        const radios = item.querySelectorAll('input[type="radio"]');
+        let selectedValue = null;
+        for (let radio of radios) {
+          if (radio.checked) {
+            selectedValue = radio.value;
+            break;
+          }
+        }
+        const isCorrect = (selectedValue === correctAnswer);
+        if (isCorrect) {
+          correctCount++;
+          item.classList.add('correct-highlight');
+        } else {
+          item.classList.add('wrong-highlight');
+        }
+        resultsPerQuestion.push({ correct: isCorrect, userAnswer: selectedValue, correctAnswer: correctAnswer });
+      });
+
+      // отображаем результат
+      resultDiv.innerHTML = `🎯 Вы набрали ${correctCount} из ${total} баллов. ${correctCount === total ? 'Отлично! Материал усвоен.' : 'Рекомендуем повторить разделы с ошибками.'}`;
+      
+      // дополнительный развернутый фидбек
+      let wrongDetails = [];
+      resultsPerQuestion.forEach((res, idx) => {
+        if (!res.correct) {
+          let userText = res.userAnswer ? res.userAnswer : '✖ не выбран';
+          wrongDetails.push(`Вопрос ${idx+1}: ваш ответ — «${userText}», правильный — «${res.correctAnswer}».`);
+        }
+      });
+      if (wrongDetails.length) {
+        extraFeedback.innerHTML = `<strong><i class="fas fa-info-circle"></i> Пояснение к ошибкам:</strong><br> ${wrongDetails.join('<br> ')}`;
+      } else {
+        extraFeedback.innerHTML = '<span style="color:#2b5e2b;">✅ Превосходно! Вы знаете просвещение Руси XIV–XVI веков.</span>';
+      }
+    }
+
+    // сброс ответов + сброс выделений
+    function resetQuiz() {
+      resetHighlightAndResult();
+    }
+
+    checkBtn.addEventListener('click', checkAnswers);
+    resetBtn.addEventListener('click', resetQuiz);
+  })();
+</script>
+</body>
+</html>
